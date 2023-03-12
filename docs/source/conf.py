@@ -2,9 +2,9 @@
 
 # -- Project information
 
-project = 'Lumache'
-copyright = '2021, Graziella'
-author = 'Graziella'
+project = 'Project NESE'
+copyright = '2023, Team NESE'
+author = 'csim'
 
 release = '0.1'
 version = '0.1.0'
