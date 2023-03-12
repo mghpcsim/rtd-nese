@@ -47,8 +47,7 @@ NESE Tape
 
 Building on top of the success of NESE Disk, we began investigating a NESE storage tier capable
 of growing to the exascale capacity over the next few years. 
-Project NESE Co-PI Professor Tiwari of Northeastern University led this work. 
-He and his team investigated technologies including traditional spinning disk drives,
+We investigated technologies including traditional spinning disk drives,
 optical disk drives, magnetic tape, SSD and even exotic technologies like DNA storage.
 When looking at expected trends of bit density, tape is expected to continue to improve in a
 Moore’s law fashion for many years with many doublings, while HDD density increases
