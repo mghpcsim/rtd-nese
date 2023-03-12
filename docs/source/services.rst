@@ -18,7 +18,6 @@ services at a much lower cost per TB than disk-based services.
 
 NESE Disk (Block Storage)
 -------------------------
-
 NESE Disk provides block storage as a service built on top of `Ceph <https://ceph.io/>`_. 
 Ceph was chosen because it provides a single storage system to manage that offers multiple
 storage types and access mechanisms including file (CephFS), block (RBD), and object (S3). 
@@ -45,5 +44,25 @@ If you are interested in purchasing NESE Disk storage services, contact ???
 
 NESE Tape
 ---------
+
+Building on top of the success of NESE Disk, we began investigating a NESE storage tier capable
+of growing to the exascale capacity over the next few years. 
+Project NESE Co-PI Professor Tiwari of Northeastern University led this work. 
+He and his team investigated technologies including traditional spinning disk drives,
+optical disk drives, magnetic tape, SSD and even exotic technologies like DNA storage.
+When looking at expected trends of bit density, tape is expected to continue to improve in a
+Moore’s law fashion for many years with many doublings, while HDD density increases
+are much more difficult technologically. Because of this, it’s generally expected that the
+per terabyte cost advantage for tape compared to HDD will continue to increase
+indefinitely. The current densest tape media are the IBM enterprise 20 TB cartridges. 
+However, more than 200 TB cartridges have been demonstrated in lab settings for several years 
+already, and `400 TB tape cartridges are anticipated in 2028 <https://blocksandfiles.com/2020/06/29/fujifilm-400tb-magnetic-tape-cartridge-future/>`_. 
+
+Today, NESE Tape services are provided via Globus. If you are interested in purchasing NESE Tape
+storage services, contact ???. Other interfaces for NESE Tape services are currently being explored
+including S3 via `Starfish Storage <https://starfishstorage.com>`_ and there are groups using the
+CERN ecosystem of tools. If you are interested in exploring other alternatives, please
+visit the `NESE support page and contact us <https://nesedev.readthedocs.io/en/latest/support.html>`_.
+
 
 
