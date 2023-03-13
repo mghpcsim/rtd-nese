@@ -211,15 +211,10 @@ Shared Collection Administrator
 """""""""""""""""""""""""""""""
 
 * Needs a Globus account only
-
 * Submits shared Globus collection request to their NESE coordinator
-
 * When the shared endpoint shows up in their Globus interface
-
  * Creates subdirectories
-
  * Manages Globus user’s access controls at subdirectory level
-
  * Is able to promote Globus users to the administrator role at the shared collection level
 
 
