@@ -1,15 +1,6 @@
 NESE Services
 ==================
 
-Historically, the MGHPCC has provided co-location services for its member institutes only including
-power, space, cooling, and networking. However, over the last few years, MGHPCC and its member
-institutes are starting to explore the concept of operating joint services across the whole
-consortium. NESE is one such effort and is positioned to be the backbone of shared storage services
-for the facility.  The success of NESE is allowing us to build other infrastructure on
-top of it, such as `the New England Research Cloud (NERC) <https://nerc.mghpcc.org/>`_ -- 
-a large multi-institutional OpenStack/OpenShift environment funded through partnerships 
-between Harvard University, Boston University, Mass Tech Collaborative, and RedHat, Inc.
-
 NESE currently provides two services, NESE Disk and NESE Tape. NESE Disk provides block storage
 that can be mounted on a physical or virtual machine across institutional boundaries and then
 exported via standard NAS prototocls, such as NFS or SMB. NESE Tape provides archival storage
