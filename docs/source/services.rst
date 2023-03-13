@@ -34,7 +34,7 @@ It is also open source software that provides erasure coding for resilency, whic
 advantages over traditional RAID volumes when working with very large drive and volume sizes.
 
 While CephFS is arguably the most performant, as each end-point is a Ceph Client that can
-access the backend OSN disks directory without the bottleneck of doing through a Rados gateway (RGW)
+access the backend OSD disks directory without the bottleneck of doing through a Rados gateway (RGW)
 server, it was not chosen as a target capability. Access controls for CephFS are tied to the
 local identity provider and as this service is provided across institutional (and IAM) boundaries,
 CephFS was just not feasible.  
