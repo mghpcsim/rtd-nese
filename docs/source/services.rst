@@ -15,6 +15,15 @@ that can be mounted on a physical or virtual machine across institutional bounda
 exported via standard NAS prototocls, such as NFS or SMB. NESE Tape provides archival storage
 services at a much lower cost per TB than disk-based services.
 
+If you are affiliated with one of the institutions below, follow the appropriate link to contact 
+your local research computing support group to get started with NESE.
+
+* `Boston University <http://www.bu.edu/tech/support/research>`_
+* `Harvard University <https://rc.fas.harvard.edu/>`_
+* `Massachusetts Institute of Technology <http://researchcomputing.mit.edu/facilities/mghpcc>`_
+* `Northeastern University <http://northeastern.edu/rc>`_
+* `University of Massachusetts <https://www.umassrc.org/>`_
+* `University of Rhode Island <https://its.uri.edu/research-computing/uri-mghpcc/>`_
 
 NESE Disk (Block Storage)
 -------------------------
@@ -40,7 +49,6 @@ At this time, NESE is not supporting the S3 protocol. If you are interested in S
 for NSF PIs up to 50 TB and larger allocations are available with hardware purchases. 
 For getting access to an OSN bucket, see the `OSN allocations documentation <https://openstoragenetwork.readthedocs.io/en/latest/allocations.html#allocations>`_ for more information.
 
-If you are interested in purchasing NESE Disk storage services, contact ???
 
 NESE Tape
 ---------
@@ -57,8 +65,8 @@ indefinitely. The current densest tape media are the IBM enterprise 20 TB cartri
 However, more than 200 TB cartridges have been demonstrated in lab settings for several years 
 already, and `400 TB tape cartridges are anticipated in 2028 <https://blocksandfiles.com/2020/06/29/fujifilm-400tb-magnetic-tape-cartridge-future/>`_. 
 
-Today, NESE Tape services are provided via Globus. If you are interested in purchasing NESE Tape
-storage services, contact ???. Other interfaces for NESE Tape services are currently being explored
+Today, NESE Tape services are provided via Globus. 
+Other interfaces for NESE Tape services are currently being explored
 including S3 via `Starfish Storage <https://starfishstorage.com>`_ and there are groups using the
 CERN ecosystem of tools. If you are interested in exploring other alternatives, please
 visit the `NESE support page and contact us <https://nesedev.readthedocs.io/en/latest/support.html>`_.

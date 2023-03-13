@@ -7,7 +7,7 @@ long-term storage of research data.
 
 Funding for creation of NESE was provided by the NSF Data Infrastructure Building Blocks (DIBBs)
 program to encourage development of robust and shared data-centric cyberinfrastructure capabilities,
-to accelerate interdisciplinary and collaborative research in areas of inquiry stimulated by data.
+and to accelerate interdisciplinary and collaborative research in areas of inquiry stimulated by data.
 
 NESE Objectives:
 ^^^^^^^^^^^^^^^^
