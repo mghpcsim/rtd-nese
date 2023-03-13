@@ -16,7 +16,7 @@ your local research computing support group to get started with NESE.
 * `University of Massachusetts <https://www.umassrc.org/>`_
 * `University of Rhode Island <https://its.uri.edu/research-computing/uri-mghpcc/>`_
 
-NESE Disk (Block Storage)
+NESE Ceph -- Block Storage
 -------------------------
 NESE Disk provides block storage as a service built on top of `Ceph <https://ceph.io/>`_. 
 Ceph was chosen because it provides a single storage system to manage that offers multiple
