@@ -35,11 +35,7 @@ data storage provider would be that of a platform that provides something more a
 a data lake, and not fast direct attached storage to an HPC cluster, as each of the
 institutions already had this service. 
 
-At this time, NESE is not supporting the S3 protocol. If you are interested in S3 file services,
-`Open Storage Network (OSN) <https://www.openstoragenetwork.org>`_ provides this as a free service
-for NSF PIs up to 50 TB and larger allocations are available with hardware purchases. 
-For getting access to an OSN bucket, see the `OSN allocations documentation <https://openstoragenetwork.readthedocs.io/en/latest/allocations.html#allocations>`_ for more information.
-
+At this time, NESE is not supporting the S3 protocol. 
 
 NESE Tape
 ---------
