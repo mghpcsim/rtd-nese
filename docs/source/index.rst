@@ -19,6 +19,15 @@ NESE Objectives:
 * Provide easy access to shared assets through co-development with related projects such as `NERC <https://nerc.mghpcc.org>`_, `the MOC Alliance <https://www.bu.edu/hic/centers-initiatives-labs/mocalliance/>`_, and `the Open Storage Network <https://www.openstoragenetwork.org>`_.
 
 
+Target Audience:
+^^^^^^^^^^^^^^^^
+
+* PIs looking for more information on storage services should see `NESE Services <https://nesedev.readthedocs.io/en/latest/services.html>`_
+
+* Researchers looking for more information on how to use the storage sercices should see `Using NESE <https://nesedev.readthedocs.io/en/latest/using-nese.html>`_
+
+* Sysadmins who are running NESE sites should see the `Technical Documentation <https://nesedev.readthedocs.io/en/latest/technical-docs.html>`_ for more information
+
 Contents
 --------
 
