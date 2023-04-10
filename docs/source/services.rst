@@ -38,7 +38,7 @@ a data lake, and not fast direct attached storage to an HPC cluster, as each of 
 institutions already had this service. 
 
 NESE Disk provides two options, block storage and Globus storage. The block storage service
-is used to provide NAS that is then available to be mounted on institutional resources such as
+is used to provide network attached storage that is then available to be mounted on institutional resources such as
 campus HPC systems. The NESE Disk Globus service provides a data lake that is only available
 via Globus. No direct / command line access to NESE Disk-based Globus storage is available.
 
