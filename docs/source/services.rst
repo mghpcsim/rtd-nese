@@ -1,10 +1,11 @@
 NESE Services
 ==================
 
-NESE currently provides two services, NESE Disk and NESE Tape. NESE Disk provides block storage
-that can be mounted on a physical or virtual machine across institutional boundaries and then
-exported via standard NAS prototocls, such as NFS or SMB. NESE Tape provides archival storage
-services at a much lower cost per TB than disk-based services.
+NESE currently provides two services, NESE Disk and NESE Tape. 
+NESE Disk provides block storage that can be mounted on a physical or virtual machine across 
+institutional boundaries and then exported via standard Network Attached Storage (NAS) prototocls, such as NFS or SMB. 
+Alternatively, NESE Disk resources can be made accessible via a Globus endpoint provided by Harvard. 
+NESE Tape provides archival storage services at a much lower cost per TB than disk-based services.
 
 If you are affiliated with one of the institutions below, follow the appropriate link to contact 
 your local research computing support group to get started with NESE.
@@ -16,9 +17,9 @@ your local research computing support group to get started with NESE.
 * `University of Massachusetts <https://www.umassrc.org/>`_
 * `University of Rhode Island <https://its.uri.edu/research-computing/uri-mghpcc/>`_
 
-NESE Ceph -- Block Storage
--------------------------
-NESE Disk provides block storage as a service built on top of `Ceph <https://ceph.io/>`_. 
+NESE Disk
+---------
+NESE Disk provides block storage and globus endpoints as a service built on top of `Ceph <https://ceph.io/>`_. 
 Ceph was chosen because it provides a single storage system to manage that offers multiple
 storage types and access mechanisms including file (CephFS), block (RBD), and object (S3). 
 It is also open source software that provides erasure coding for resilency, which has many
@@ -28,24 +29,28 @@ While CephFS is arguably the most performant, as each end-point is a Ceph Client
 access the backend OSD disks directory without the bottleneck of going through a Rados gateway (RGW)
 server, it was not chosen as a target capability. Access controls for CephFS are tied to the
 local identity provider and as this service is provided across institutional (and IAM) boundaries,
-CephFS was just not feasible.  
+CephFS was just not feasible for the NESE Disk NAS services. However, CephFS does provides the backing store
+for the NESE Disk Globus service.
 
 After a year of service, we decided the best long-term vision of NESE as a
 data storage provider would be that of a platform that provides something more akin to
 a data lake, and not fast direct attached storage to an HPC cluster, as each of the
 institutions already had this service. 
 
+NESE Disk provides two options, block storage and Globus storage. The block storage service
+is used to provide NAS that is then available to be mounted on institutional resources such as
+campus HPC systems. The NESE Disk Globus service provides a data lake that is only available
+via Globus. No direct / command line access to NESE Disk-based Globus storage is available.
+
 At this time, NESE is not supporting the S3 protocol. 
 
 NESE Tape
 ---------
 
-Building on top of the success of NESE Disk, we began investigating a NESE storage tier capable
+Building on top of the success of NESE Disk, we have begun deploying a NESE storage tier capable
 of growing to the exascale capacity over the next few years. 
-We investigated technologies including traditional spinning disk drives,
-optical disk drives, magnetic tape, SSD and even exotic technologies like DNA storage.
 When looking at expected trends of bit density, tape is expected to continue to improve in a
-Moore’s law fashion for many years with many doublings, while HDD density increases
+Moore’s law fashion for many years, while HDD density increases
 are much more difficult technologically. Because of this, it’s generally expected that the
 per terabyte cost advantage for tape compared to HDD will continue to increase
 indefinitely. The current densest tape media are the IBM enterprise 20 TB cartridges. 
