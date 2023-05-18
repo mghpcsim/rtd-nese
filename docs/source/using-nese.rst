@@ -10,7 +10,7 @@ what fraction of storage is to be made available via the Globus data lake servic
 to be made available as network attached storage. 
 
 For NESE Disk provided file services, you must have access to a system located in the MGHPCC.
-This could be campus HPC system (such as Engaging or Unity), a departmental system, or a group server.
+This could be a campus HPC system (such as Engaging or Unity), a departmental system, or a group server.
 This service does not provide compute or ways to access the storage without other servers being availalble 
 in our data center. Contact your local campus support group for what systems are eligible for NESE Disk 
 file services.
@@ -24,9 +24,9 @@ like you use $HOME or $SCRATCH directories.
 	NESE Disk file services are not high-performance, parallel file system. If you need parallel
 	or high IOPS I/O performance, stage your data to a $SCRATCH filesystem before submitting a job.
 
-For storage that is available via Globus, you will use either Globus-enabled apps including the web applications,
+For storage that is available via Globus, you will use Globus-enabled apps including the web applications,
 the CLI, or the SDK to interact with your data lake. You will not be provided interactive access and must
-use Globus-enabled clients. To access your data lake, you must know your "Collection Name"
+use Globus-enabled clients. To access your data lake, you must know your Globus "Collection Name"
 that will be provided to you at allocation time.
 
 Globus Data Lake services have use cases that complement those covered by standard NESE Disk file services.
