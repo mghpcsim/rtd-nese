@@ -4,6 +4,51 @@ Using NESE
 NESE Disk
 ---------
 
+NESE Disk provides file services for systems located in The Massachusetts Green High Performance Computing
+Center (MGHPCC) as well as data lake services via Globus. At purchase time, PIs and organizations specify
+what fraction of storage is to be made available via the Globus data lake service and what fraction is
+to be made available as network attached storage. 
+
+For NESE Disk provided file services, you must have access to a system located in the MGHPCC.
+This could be campus HPC system (such as Engaging or Unity), a departmental system, or a group server.
+This service does not provide compute or ways to access the storage without other servers being availalble 
+in our data center. Contact your local campus support group for what systems are eligible for NESE Disk 
+file services.
+
+Once storage is purchased, your local campus research computing support group will mount the storage
+on the systems of your chosing. From here, you simply navigate to the mount point and use it just
+like you use $HOME or $SCRATCH directories. 
+
+.. note::
+
+	NESE Disk file services are not high-performance, parallel file system. If you need parallel
+	or high IOPS I/O performance, stage your data to a $SCRATCH filesystem before submitting a job.
+
+For storage that is available via Globus, you will use either Globus-enabled apps including the web applications,
+the CLI, or the SDK to interact with your data lake. You will not be provided interactive access and must
+use Globus-enabled clients. To access your data lake, you must know your "Collection Name"
+that will be provided to you at allocation time.
+
+Globus Data Lake services have use cases that complement those covered by standard NESE Disk file services.
+If you are only using servers or HPC systems in our data center, you probably want to simply use the file services
+discussed above. 
+
+Use cases:
+
+- national HPC scratch persistence
+- django globus science gateway
+- place to send data that'll stay warm before going to NESE Tape
+
+
+For more information on using Globus,
+see the <section below>
+
+.. note::
+
+        Storage that is available via Globus is ONLY available via Globus. No interactive access or shell
+        access is available.
+
+
 
 
 NESE Tape
