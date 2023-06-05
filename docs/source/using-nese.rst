@@ -21,7 +21,7 @@ like you use $HOME or $SCRATCH directories.
 
 .. note::
 
-	NESE Disk file services are not high-performance, parallel file system. If you need parallel
+	NESE Disk file services are not high-performance, parallel file systems. If you need parallel
 	or high IOPS I/O performance, stage your data to a $SCRATCH filesystem before submitting a job.
 
 For storage that is available via Globus, you will use Globus-enabled apps including the web applications,
@@ -40,8 +40,7 @@ Use cases:
 - place to send data that'll stay warm before going to NESE Tape
 
 
-For more information on using Globus,
-see the <section below>
+For more information on using Globus, see the using Globus section below.
 
 .. note::
 
@@ -54,53 +53,82 @@ see the <section below>
 NESE Tape
 ---------
 
-info on how it works, cache, tape, coming soon cache and tape utilization and quota info
+NESE Tape is composed of a tape system with nine storage frames holding 6658 media slots, 
+two tape robots and 34 tape drives. The system can be expanded with an additional seven frames
+that can be expanded to hold 13398 total tape cartridge slots. 
+
+Each NESE Tape allocation comes with a disk-based cache that is available via Globus.
+Users write to the cache and then the data is migrated to tape based on a storage 
+lifecycle policy. The default quota on the cache space is 10T or 2% of tape capacity whichever 
+is larger. There is also minimum temporary hard quota set to 4 x cache 
+space to allow for short term movement of larger amounts of data. Inode 
+quotas are set to an average of 100MB/file of the tape pool capacity 
+associated with the fileset.
+
+The storage lifecycle policy is:
+
+* Premigrate: all newly written files > 2 hr of modification time are copied to tape
+* Migrate 1: if fileset quota > 99%; files are stubbed (replaced with a small pointer) down to 75% quota
+* Migrate 2: files with access time age > 2 weeks are stubbed
+* Files < 100 MB copied to tape, but also remain on disk
+
+For more information on using Globus, see the using Globus section below.
 
 
-Globus
-^^^^^^
+.. warning::
 
-The primary way to access NESE Tape is to use Globus. 
+        DO NOT delete files through the Globus interface. This will simply delete the files on the disk-based
+        cache but will not remove files from tape. Deleting files through Globus will make the tape storage
+        inaccessible.
 
-There are four different ways to use Globus and NESE Tape.
+Using Globus
+------------
 
-* The Globus.org Web Portal
-* Globus Connect Personal
-* Globus Connect Server
-* The Globus CLI
+Whether you are using NESE Tape or the NESE Disk data lake services, you will use Globus.
+Globus can be used in two main ways, through a web interface or through command line tools.
 
 Web Portal
 """"""""""
 
-The easiest way to get started is with the Globus Web Portal.
-The Globus Web Portal can be accessed from any computer and is best use to download and upload
-modest amounts of data directly or set up larger transfers from one Globus endpoint to another.
-If you are downloading or uploading data, note that the web browser window must stay open
-for the duration of the tranfer.
+When working with the Web Portal, there are three different types of transfers.
 
-Go to `Globus.org <https://www.globus.org>`_ and click "Log in" in the upper right hand corner.
-Once logged in, search for your Tape allocation via the Collection Search dialog box. 
-The collection name should have been provided to you at the time of NESE tape allocation.
+* Globus Connect Server to Globus Connect Server
+* Globus Connect Personal to Globus Connect Server
+* Local computer via web app to Globus Connect Server
 
-Once you've located your share, click on it to load it into the File Manager app.
-Click "Bookmark" in the upper right hand side of the window and give it a Name such as "NESE Tape"
-and then click "Create Bookmark".
+Globus Connect Server (GCS) will be set up and maintained by systems administratos.
+In all three cases above, one of the GCSs will be the NESE Tape or Disk endpoints.
+When you are provided access to NESE services, you will be given a 'Collection Name'. This will be
+the collection you write to for the data lake or archival services. 
 
-From here, you can now upload or download data directly from your computer or setup a transfer
-from one collection to another.
+The primary way to transfer data will be from one Globus Connect Server to the NESE-hosted GCS.
+This method can be used to transfer data from campus or national systems to NESE or vice versa.
+In addition to your NESE collection name, you will need information on the Globus configration for
+the other target.
 
-Globus Connect Personal
-"""""""""""""""""""""""
+Globus information:
 
-`Globus Connect Personal <https://www.globus.org/globus-connect-personal>`_ turns your laptop
+* `Globus @ Harvard <https://docs.rc.fas.harvard.edu/kb/globus-file-transfer/>`_
+* Globus @ MIT
+* `Globus @ BU <https://www.bu.edu/tech/support/research/system-usage/transferring-files/another-institution/>`_
+* `Globus @ Northeastern <https://rc-docs.northeastern.edu/en/latest/05_using-discovery/06_globus.html>`_
+* `Globus @ UMass <https://docs.unity.rc.umass.edu/transfers/transfers.html>`_
+* `Globus @ URI <https://docs.unity.uri.edu/managing-files/globus.html>`_
+* `Globus @ TACC <https://frontera-portal.tacc.utexas.edu/guides/globus-data-transfer-guide/>`_
+* `Globus @ SDSC <https://www.sdsc.edu/support/resource_docs.html>`_
+* `Globus @ NCSA <https://wiki.ncsa.illinois.edu/display/Globus>`_
+* `Globus @ PSC <https://www.psc.edu/resources/bridges-2/user-guide-2-2/>`_
+
+The second way to transfer files is from Globus Connect Personal to a Globus Connect Server
+hosted endpoint. `Globus Connect Personal <https://www.globus.org/globus-connect-personal>`_ turns your laptop
 or other personal computer into a Globus endpoint with just a few clicks.
 With Globus Connect Personal you can share and transfer files to/from
 a local machine—campus server, desktop computer or laptop—even if it's behind a firewall and
 you don't have administrator privileges.
 
 Globus Connect Personal uses the same authentication and provides access to your collections just
-like the web portal, however, it automatically suspends transfers when the computer sleeps and
-resumes when turned back on. 
+like using two Globus Connect Server endpoints, however, it automatically suspends transfers when
+the computer sleeps and resumes when turned back on. 
 
 Globus Connect Personal can be installed for `Mac OS X <https://docs.globus.org/how-to/globus-connect-personal-mac/>`_, for `Linux including Debian and RedHat based distros and openSUSE <https://docs.globus.org/how-to/globus-connect-personal-linux/>`_, and `Windows <https://docs.globus.org/how-to/globus-connect-personal-windows/>`_.
 
@@ -113,23 +141,35 @@ Once you've installed Globus Connect Personal, you'll be able to create a new co
 laptop / desktop in Globus and create a bookmark as before. Now, you are able to use the Globus
 Web Portal to transfer files from this new collection (your laptop) to NESE tape and back.
 While you are still using the web app to initiate the transfer, the actual data is not sent using
-the web app. Your new personal endpoint connects to the NESE Tape endpoint and transfers happen
-directly support suspend, resume, and the changing of networks for your laptop. 
+the web app. Your new personal endpoint connects to the NESE endpoint and transfers happen
+directly with support for suspend, resume, and the changing of networks for your laptop. 
+
+The final way to transfer data is from any other laptop or desktop that is not running 
+Globus Connect Personal (GCP) to NESE-hosted Globus endpoints. While you can only have one GCP
+instance, you can still use the web portal to move data to and from NESE. This method
+is best used to download and upload modest amounts of data directly as it does not have many
+of the features of using GCS or GCP and your web browser window must stay open
+for the duration of the tranfer.
 
 
-Globus Connect Server
-"""""""""""""""""""""
+Regardless of the method you are using, go to `Globus.org <https://www.globus.org>`_ and 
+click "Log in" in the upper right hand corner.
+Once logged in, search for your NESE allocation via the Collection Search dialog box. 
+The collection name should have been provided to you at the time of NESE allocation.
 
-If you require more than one user per server to use Globus or you want to use Globus to transfer
-files from a campus HPC system, `Globus Connect Server <https://www.globus.org/globus-connect-server>`_
-must be used. Globus Connect Server must be set up by a systems administration and is beyond the 
-scope of this document. Contact your local research computing support group for details. 
+Once you've located your share, click on it to load it into the File Manager app.
+Click "Bookmark" in the upper right hand side of the window and give it a Name such as "NESE Tape"
+and then click "Create Bookmark".
+
+From here, you can now upload or download data directly from your computer or setup a transfer
+from one collection to another.
 
 
-Command Line Interface
-""""""""""""""""""""""
 
-Finally, globus has a command line wrapper to their Python SDK.
+Command Line Tools 
+""""""""""""""""""
+
+In addition to the web portal, globus has a command line wrapper to their Python SDK.
 
 * `How to Guide for the Globus CLI at Globus.org <https://docs.globus.org/cli/>`_
 
@@ -171,10 +211,18 @@ Once completed, verify authentication. ::
 From here, you can follow the `Globus CLI QuickStart Guide <https://docs.globus.org/cli/quickstart/>`_.
 
 
+In addition to the Globus CLI, there is a very powerful package, Archivetar, that is designed to be used with
+large volumes of data, Globus, and hierarchical storage systems (such as the one used by NESE tape).
+
+Archivetar:
+
+* `Introduction <https://github.com/brockpalen/archivetar>`_
+* `Installation <https://github.com/brockpalen/archivetar/blob/master/INSTALL.md>`_
+* `Using Archivetar <https://github.com/brockpalen/archivetar/blob/master/USAGE.md>`_
 
 
 Globus References
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""
 
 * Globus web interface: https://docs.globus.org/how-to/get-started/
 * Create Globus Shared Collection: https://docs.globus.org/how-to/share-files/
@@ -184,6 +232,4 @@ Globus References
  * https://www.globus.org/globus-connect-personal
  * https://www.globus.org/globus-connect-server
 
-Other Protocols
-^^^^^^^^^^^^^^^
 
