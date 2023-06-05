@@ -35,9 +35,9 @@ discussed above.
 
 Use cases:
 
-- national HPC scratch persistence
-- django globus science gateway
-- place to send data that'll stay warm before going to NESE Tape
+- National HPC scratch persistence
+- `Django globus science gateway <https://github.com/globus/django-globus-portal-framework>`_
+- Place to send data that'll stay warm before going to NESE Tape
 
 
 For more information on using Globus, see the using Globus section below.
@@ -55,11 +55,11 @@ NESE Tape
 
 NESE Tape is composed of a tape system with nine storage frames holding 6658 media slots, 
 two tape robots and 34 tape drives. The system can be expanded with an additional seven frames
-that can be expanded to hold 13398 total tape cartridge slots. 
+to hold 13398 total tape cartridge slots. 
 
 Each NESE Tape allocation comes with a disk-based cache that is available via Globus.
 Users write to the cache and then the data is migrated to tape based on a storage 
-lifecycle policy. The default quota on the cache space is 10T or 2% of tape capacity whichever 
+lifecycle policy. The default quota on the cache space is 10T or 2% of tape capacity, whichever 
 is larger. There is also minimum temporary hard quota set to 4 x cache 
 space to allow for short term movement of larger amounts of data. Inode 
 quotas are set to an average of 100MB/file of the tape pool capacity 
@@ -71,6 +71,10 @@ The storage lifecycle policy is:
 * Migrate 1: if fileset quota > 99%; files are stubbed (replaced with a small pointer) down to 75% quota
 * Migrate 2: files with access time age > 2 weeks are stubbed
 * Files < 100 MB copied to tape, but also remain on disk
+
+"Stubbed files" are files on the cache that are migrated to tape and a "pointer" is left on the cache.
+When the pointer is read via Globus, the file is retrieved by the tape robots, promoted to the
+file cache, and the stub is then replaced with the original file
 
 For more information on using Globus, see the using Globus section below.
 
@@ -165,6 +169,10 @@ From here, you can now upload or download data directly from your computer or se
 from one collection to another.
 
 
+.. warning::
+
+        File transfers to NESE-hosted endpoints are NOT encrypted. If you require encryption,
+        you should encrypt the files yourself before sending to NESE.
 
 Command Line Tools 
 """"""""""""""""""
