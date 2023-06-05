@@ -142,7 +142,7 @@ Globus Connect Personal can be installed for `Mac OS X <https://docs.globus.org/
         You may only have a single install of Globus Connect Personal. Chose your system wisely.
 
 Once you've installed Globus Connect Personal, you'll be able to create a new collection for your
-laptop / desktop in Globus and create a bookmark as before. Now, you are able to use the Globus
+laptop / desktop in Globus and create a bookmark. Now, you are able to use the Globus
 Web Portal to transfer files from this new collection (your laptop) to NESE tape and back.
 While you are still using the web app to initiate the transfer, the actual data is not sent using
 the web app. Your new personal endpoint connects to the NESE endpoint and transfers happen
