@@ -9,7 +9,7 @@ author = 'csim'
 release = '0.1'
 version = '0.1.0'
 
-# -- General configuration
+# -- General configuration 
 
 extensions = [
     'sphinx.ext.duration',
@@ -31,9 +31,6 @@ templates_path = ['_templates']
 
 html_theme = 'sphinx_rtd_theme'
 
-html_theme_options = {
-    'style_nav_header_background': '#1f9402',
-    # Toc options
-}
+
 # -- Options for EPUB output
 epub_show_urls = 'footnote'

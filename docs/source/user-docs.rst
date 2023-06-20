@@ -39,9 +39,6 @@ Use cases:
 - `Django globus science gateway <https://github.com/globus/django-globus-portal-framework>`_
 - Place to send data that'll stay warm before going to NESE Tape
 
-
-For more information on using Globus, see the using Globus section below.
-
 .. note::
 
         Storage that is available via Globus is ONLY available via Globus. No interactive access or shell
