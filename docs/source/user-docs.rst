@@ -85,6 +85,11 @@ For more information on using Globus, see the using Globus section below.
         cache but will not remove files from tape. Deleting files through Globus will make the tape storage
         inaccessible.
 
+Encryption
+----------
+Summary of what is and what isn't encrypyed 
+and how to encrypt files before sending to NESE
+
 Globus
 ------
 

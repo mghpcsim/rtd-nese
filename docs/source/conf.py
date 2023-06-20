@@ -31,5 +31,9 @@ templates_path = ['_templates']
 
 html_theme = 'sphinx_rtd_theme'
 
+html_theme_options = {
+    'style_nav_header_background': '#1f9402',
+    # Toc options
+}
 # -- Options for EPUB output
 epub_show_urls = 'footnote'
