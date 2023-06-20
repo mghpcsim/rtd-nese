@@ -1,5 +1,5 @@
-Using NESE
-==========
+User Documentation
+==================
 
 NESE Disk
 ---------
@@ -85,8 +85,8 @@ For more information on using Globus, see the using Globus section below.
         cache but will not remove files from tape. Deleting files through Globus will make the tape storage
         inaccessible.
 
-Using Globus
-------------
+Globus
+------
 
 Whether you are using NESE Tape or the NESE Disk data lake services, you will use Globus.
 Globus can be used in two main ways, through a web interface or through command line tools.
