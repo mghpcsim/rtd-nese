@@ -117,7 +117,7 @@ Globus information:
 * `Globus @ Harvard <https://docs.rc.fas.harvard.edu/kb/globus-file-transfer/>`_
 * Globus @ MIT
 * `Globus @ BU <https://www.bu.edu/tech/support/research/system-usage/transferring-files/another-institution/>`_
-* `Globus @ Northeastern <https://rc-docs.northeastern.edu/en/latest/05_using-discovery/06_globus.html>`_
+* `Globus @ Northeastern <https://rc-docs.northeastern.edu/en/latest/using-discovery/globus.html>`_
 * `Globus @ UMass <https://docs.unity.rc.umass.edu/transfers/transfers.html>`_
 * `Globus @ URI <https://docs.unity.uri.edu/managing-files/globus.html>`_
 * `Globus @ TACC <https://frontera-portal.tacc.utexas.edu/guides/globus-data-transfer-guide/>`_
