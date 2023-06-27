@@ -71,7 +71,7 @@ The storage lifecycle policy is:
 
 "Stubbed files" are files on the cache that are migrated to tape and a "pointer" is left on the cache.
 When the pointer is read via Globus, the file is retrieved by the tape robots, promoted to the
-file cache, and the stub is then replaced with the original file
+file cache, and the stub is then replaced with the original file.
 
 For more information on using Globus, see the using Globus section below.
 
