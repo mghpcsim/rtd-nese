@@ -1,9 +1,12 @@
 Welcome to NESE documentation!
 ===================================
 
-The Northeast Storage Exchange (NESE) is a collaborative project of the MGHPCC and its founding
-partners to deploy a regional resource that addresses the escalating need for short, medium, and
-long-term storage of research data.
+The Northeast Storage Exchange (NESE) is a collaborative project of the MGHPCC
+and its founding partners to deploy a regional resource that addresses the
+escalating need for short, medium, and long-term storage of research data.
+
+This website contains the technical and user documentation for NESE. For general information on NESE, please visit the main site.
+
 
 This website contains the technical and user documentation for NESE. 
 For general information on NESE, please `visit the main site <https://nesedev.mghpcc.org>`_.

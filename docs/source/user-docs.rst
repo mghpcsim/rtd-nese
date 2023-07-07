@@ -5,7 +5,14 @@ NESE Disk
 ---------
 
 NESE Disk provides file services for systems located in The Massachusetts Green High Performance Computing
-Center (MGHPCC) as well as data lake services via Globus. At purchase time, PIs and organizations specify
+Center (MGHPCC) as well as data lake services via Globus. NESE disk is composed of a Ceph File system
+with gateways that support RADOS Block Devices and a CephFS service that supports the NESE Globus
+end point. Object Storage is implemented by servers with standard configurations that change over time
+as storage technology evolves.  As of July 2003, total raw capacity was approximately 41 petabytes,
+with the ability to expand according to need.
+
+
+At purchase time, PIs and organizations specify
 what fraction of storage is to be made available via the Globus data lake service and what fraction is
 to be made available as network attached storage. 
 
@@ -16,7 +23,7 @@ in our data center. Contact your local campus support group for what systems are
 file services.
 
 Once storage is purchased, your local campus research computing support group will mount the storage
-on the systems of your chosing. From here, you simply navigate to the mount point and use it just
+on the systems of your choosing. From here, you simply navigate to the mount point and use it just
 like you use $HOME or $SCRATCH directories. 
 
 .. note::
@@ -50,14 +57,15 @@ Use cases:
 NESE Tape
 ---------
 
-NESE Tape is composed of a tape system with nine storage frames holding 6658 media slots, 
-two tape robots and 34 tape drives. The system can be expanded with an additional seven frames
-to hold 13398 total tape cartridge slots. 
+NESE Tape provides higher density, lower cost storage, currently accessible via Globus. NESE Tape
+is composed of a tape system with nine storage frames holding 6658 media slots, two tape robots and
+34 tape drives. The system can be expanded with an additional seven frames to hold 13398 total tape
+cartridge slots.
 
 Each NESE Tape allocation comes with a disk-based cache that is available via Globus.
 Users write to the cache and then the data is migrated to tape based on a storage 
 lifecycle policy. The default quota on the cache space is 10T or 2% of tape capacity, whichever 
-is larger. There is also minimum temporary hard quota set to 4 x cache 
+is larger. There is also a minimum temporary hard quota set to 4 x cache 
 space to allow for short term movement of larger amounts of data. Inode 
 quotas are set to an average of 100MB/file of the tape pool capacity 
 associated with the fileset.
