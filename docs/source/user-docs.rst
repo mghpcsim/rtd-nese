@@ -92,8 +92,31 @@ For more information on using Globus, see the using Globus section below.
 
 Encryption
 ----------
-Summary of what is and what isn't encrypyed 
-and how to encrypt files before sending to NESE
+
+Transfers via Globus to NESE Tape are not encrypted in transit or at rest.
+If your data management plan requires encryption, you must encrypt your files before sending
+them to NESE Tape via Globus.
+
+One easy way to do that is to use GPG with tar to create password-protected, encrypted tarballs.
+First prepare your directory to be archived and make sure you have the gpg command line tool installed.
+
+Then, create your tarball and pipe the output to the gpg command. Here we are going to use a 
+symmetric method so that all is required to unencrypt the tarball is the password. ::
+
+	$ tar czvpf - /path/to/dir/archiveme | gpg --symmetric --cipher-algo aes256 -o myarchive.tar.gz.gpg
+
+Now, you can copy myarchive.tar.gz.gpg to NESE Tape via Globus. 
+
+To extract the files ::
+
+	$ gpg -d myarchive.tar.gz.gpg | tar xzvf -
+
+
+
+.. warning::
+
+	DO NOT lose your password to your encrypted tarballs. There is no way to recover the
+	data without the password.
 
 Globus
 ------
