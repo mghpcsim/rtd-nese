@@ -101,13 +101,14 @@ One easy way to do that is to use GPG with tar to create password-protected, enc
 First prepare your directory to be archived and make sure you have the gpg command line tool installed.
 
 Then, create your tarball and pipe the output to the gpg command. Here we are going to use a 
-symmetric method so that all is required to unencrypt the tarball is the password. ::
+symmetric method so that all is required to unencrypt the tarball is the password. 
+You will be prompted to enter your password twice to encrypt the tarball. ::
 
 	$ tar czvpf - /path/to/dir/archiveme | gpg --symmetric --cipher-algo aes256 -o myarchive.tar.gz.gpg
 
 Now, you can copy myarchive.tar.gz.gpg to NESE Tape via Globus. 
 
-To extract the files ::
+To extract the files run the below command and enter your password when prompted: ::
 
 	$ gpg -d myarchive.tar.gz.gpg | tar xzvf -
 
