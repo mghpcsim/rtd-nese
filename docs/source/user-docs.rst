@@ -69,7 +69,8 @@ space to allow for short term movement of larger amounts of data.
 
 There is also a quota on the number of files that can be stored per allocation.
 This quota is set to an average of 100 MB/file of the tape pool capacity 
-associated with the fileset.
+associated with the fileset. For example, a tape allocation of 200 TB will have a 
+default quota on number of files set to 2,000,000 (200 TB / 100 MB).
 
 The storage lifecycle policy is:
 
