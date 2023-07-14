@@ -89,8 +89,8 @@ For more information on using Globus, see the using Globus section below.
 .. warning::
 
         DO NOT delete files through the Globus interface. This will simply delete the files on the disk-based
-        cache but will not remove files from tape. Deleting files through Globus will make the tape storage
-        inaccessible.
+        staging area but will not remove files from tape. Deleting files through Globus will make the tape 
+        storage inaccessible.
 
 Encryption
 ----------
