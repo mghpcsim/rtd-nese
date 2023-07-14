@@ -58,16 +58,17 @@ NESE Tape
 ---------
 
 NESE Tape provides higher density, lower cost storage, currently accessible via Globus. NESE Tape
-is composed of a tape system with nine storage frames holding 6658 media slots, two tape robots and
-34 tape drives. The system can be expanded with an additional seven frames to hold 13398 total tape
-cartridge slots.
+is composed of a tape system with several storage frames and 34 tape drives supporting up
+to 70 PB today with space available for expansion as needed.
 
-Each NESE Tape allocation comes with a disk-based cache that is available via Globus.
-Users write to the cache and then the data is migrated to tape based on a storage 
-lifecycle policy. The default quota on the cache space is 10T or 2% of tape capacity, whichever 
-is larger. There is also a minimum temporary hard quota set to 4 x cache 
-space to allow for short term movement of larger amounts of data. Inode 
-quotas are set to an average of 100MB/file of the tape pool capacity 
+Each NESE Tape allocation comes with a disk-based staging area that is available via Globus.
+Users write to the staging area and then the data is migrated to tape based on a storage 
+lifecycle policy. The default quota on this area is 10 TB or 2% of tape capacity, whichever 
+is larger. There is also a minimum temporary hard quota set to 4 x staging-area
+space to allow for short term movement of larger amounts of data. 
+
+There is also a quota on the number of files that can be stored per allocation.
+This quota is set to an average of 100 MB/file of the tape pool capacity 
 associated with the fileset.
 
 The storage lifecycle policy is:
@@ -77,9 +78,9 @@ The storage lifecycle policy is:
 * Migrate 2: files with access time age > 2 weeks are stubbed
 * Files < 100 MB copied to tape, but also remain on disk
 
-"Stubbed files" are files on the cache that are migrated to tape and a "pointer" is left on the cache.
-When the pointer is read via Globus, the file is retrieved by the tape robots, promoted to the
-file cache, and the stub is then replaced with the original file.
+"Stubbed files" are files that have only a reference left on disk and have been migrated to tape
+When the stubbed file is accessed via Globus, the file is retrieved by the tape robots, promoted to the
+disk-based staging area, and the stub is then replaced with the original file.
 
 For more information on using Globus, see the using Globus section below.
 
