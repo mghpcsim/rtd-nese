@@ -132,11 +132,11 @@ Web Portal
 
 The primary means to interact with Globus is through the web portal.
 Below, three different scenarios will be described for ways to access data
-to be sent to NESE Tape. No matter which method you are using for sending
+to be sent to NESE services. No matter which method you are using for sending
 the data, you will log into the `Globus.org <https://www.globus.org>`_ web portal,
 click "Log in" in the upper right hand corner, and begin transferring 
-data to NESE Tape. You will also use the same portal for restoring data from
-NESE Tape to another destination. 
+data to NESE. You will also use the same portal for restoring data from
+NESE Tape or sending data from NESE Disk data lake services to another destination. 
 
 When working with the Web Portal, there are three different types of transfers.
 
