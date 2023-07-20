@@ -114,7 +114,16 @@ To extract the files run the below command and enter your password when prompted
 
 	$ gpg -d myarchive.tar.gz.gpg | tar xzvf -
 
+This is a simple example of how to encrypt data before sending it to NESE.
+If you require additional security or want to exchange encrypted data with other users
+without providing them passwords, public-key based, asymmetric cryptography can 
+be used with gpg. If a public key is used to encrypt data (either locally or via a
+PGP keyserver), you must have both the private key and the passphrase to decrypt
+the data! 
 
+If you'd like help with using asymmetric encryption with your NESE workflows,
+email `help@nese.mghpcc.org <mailto:help@nese.mghpcc.org>`_ for assitance.
+ 
 
 .. warning::
 
