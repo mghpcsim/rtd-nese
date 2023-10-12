@@ -8,7 +8,7 @@ NESE Disk provides file services for systems located in The Massachusetts Green 
 Center (MGHPCC) as well as data lake services via Globus. NESE disk is composed of a Ceph File system
 with gateways that support RADOS Block Devices and a CephFS service that supports the NESE Globus
 end point. Object Storage is implemented by servers with standard configurations that change over time
-as storage technology evolves.  As of July 2003, total raw capacity was approximately 41 petabytes,
+as storage technology evolves.  As of July 2023, total raw capacity was approximately 41 petabytes,
 with the ability to expand according to need.
 
 
