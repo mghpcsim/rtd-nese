@@ -88,9 +88,10 @@ For more information on using Globus, see the using Globus section below.
 
 .. warning::
 
-        DO NOT delete files through the Globus interface. This will simply delete the files on the disk-based
-        staging area but will not remove files from tape. Deleting files through Globus will make the tape 
-        storage inaccessible.
+	Please submit a help request by emailing `help@nese.mghpcc.org <mailto:help@nese.mghpcc.org>`_ when you delete 
+        a significant number of files through the Globus interface. Deleting files through Globus will not automatically 
+	remove the files tape. Reclaiming of tape space is a process that requires reformatting of tape cartridges that the administrators
+	to initiate manually.
 
 Encryption
 ----------
