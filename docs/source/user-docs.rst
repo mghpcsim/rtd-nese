@@ -67,6 +67,11 @@ lifecycle policy. The default quota on this area is 10 TB or 2% of tape capacity
 is larger. There is also a minimum temporary hard quota set to 4 x staging-area
 space to allow for short term movement of larger amounts of data. 
 
+.. note::
+
+	Files stored on NESE Tape should ideally be between 1 GiB and 1 TiB. Please consider creating
+	tarballs of these target sizes before sending data via Globus to NESE Tape. 
+
 There is also a quota on the number of files that can be stored per allocation.
 This quota is set to an average of 100 MB/file of the tape pool capacity 
 associated with the fileset. For example, a tape allocation of 200 TB will have a 
