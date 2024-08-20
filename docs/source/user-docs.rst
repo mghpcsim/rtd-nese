@@ -107,16 +107,15 @@ In general:
 * Data in NESE *disk* storage is encrypted at rest.
 * Data in NESE *tape* storage is *NOT* encrypted at rest.
 
-If your data management plan requires encryption of the data at rest, you must
-encrypt your files before sending them to NESE Tape via Globus.
+If your data management plan requires encryption of the data at rest in NESE Tape, you must
+encrypt your files before transferring them with Globus. They cannot be encrypted within
+the NESE Tape system.
 
-Please consult with your institution's Research Computing Facilitation team or
-other subject matter experts on the best way to organize and encrypt your data
-prior to transfer.
-
+If your data stewardship requires that your datasets be encrypted with keys you manage or at
+rest on NESE Tape, please consult with your institution's Research Computing Facilitation team or
+other subject matter experts provided by your institution.
 NESE does not offer services or support for encryption or
-decryption of data by researchers using the storage, only encryption provided
-in the routine course of the Globus file transfer and NESE disk storage services.
+decryption of data except as noted above.
 
 Globus
 ------
