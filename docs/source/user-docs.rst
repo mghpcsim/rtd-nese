@@ -101,40 +101,17 @@ For more information on using Globus, see the using Globus section below.
 Encryption
 ----------
 
-Transfers via Globus to NESE Tape are not encrypted in transit or at rest.
-If your data management plan requires encryption, you must encrypt your files before sending
+Transfers via Globus to NESE Tape are encrypted in transit by default, although
+users can override this to transfer files in cleartext. Data in NESE storage is
+not encrypted at rest.
+If your data management plan requires encryption of the data at rest, you must
+encrypt your files before sending
 them to NESE Tape via Globus.
 
-One easy way to do that is to use GPG with tar to create password-protected, encrypted tarballs.
-First prepare your directory to be archived and make sure you have the gpg command line tool installed.
-
-Then, create your tarball and pipe the output to the gpg command. Here we are going to use a 
-symmetric method so that all is required to unencrypt the tarball is the password. 
-You will be prompted to enter your password twice to encrypt the tarball. ::
-
-	$ tar czvpf - /path/to/dir/archiveme | gpg --symmetric --cipher-algo aes256 -o myarchive.tar.gz.gpg
-
-Now, you can copy myarchive.tar.gz.gpg to NESE Tape via Globus. 
-
-To extract the files run the below command and enter your password when prompted: ::
-
-	$ gpg -d myarchive.tar.gz.gpg | tar xzvf -
-
-This is a simple example of how to encrypt data before sending it to NESE.
-If you require additional security or want to exchange encrypted data with other users
-without providing them passwords, public-key based, asymmetric cryptography can 
-be used with gpg. If a public key is used to encrypt data (either locally or via a
-PGP keyserver), you must have both the private key and the passphrase to decrypt
-the data! 
-
-If you'd like help with using asymmetric encryption with your NESE workflows,
-email `help@nese.mghpcc.org <mailto:help@nese.mghpcc.org>`_ for assitance.
- 
-
-.. warning::
-
-	DO NOT lose your password to your encrypted tarballs. There is no way to recover the
-	data without the password.
+Please consult with your institution's Research Computing Facilitation team or
+other subject matter experts on the best way to organize and encrypt your data
+prior to transfer. NESE does not offer services or support for encryption or
+decryption of data at rest in the NESE storage systems.
 
 Globus
 ------
