@@ -101,17 +101,22 @@ For more information on using Globus, see the using Globus section below.
 Encryption
 ----------
 
-Transfers via Globus to NESE Tape are encrypted in transit by default, although
-users can override this to transfer files in cleartext. Data in NESE storage is
-not encrypted at rest.
+In general:
+- Transfers via Globus to NESE Tape are encrypted in transit by default, although
+users can override this to transfer files in cleartext.
+- Data in NESE **disk** storage is encrypted at rest.
+- Data in NESE **tape** storage is **NOT** encrypted at rest.
+
 If your data management plan requires encryption of the data at rest, you must
-encrypt your files before sending
-them to NESE Tape via Globus.
+encrypt your files before sending them to NESE Tape via Globus.
 
 Please consult with your institution's Research Computing Facilitation team or
 other subject matter experts on the best way to organize and encrypt your data
-prior to transfer. NESE does not offer services or support for encryption or
-decryption of data at rest in the NESE storage systems.
+prior to transfer.
+
+NESE does not offer services or support for encryption or
+decryption of data by researchers using the storage, only encryption provided
+in the routine course of the Globus file transfer and NESE disk storage services.
 
 Globus
 ------
@@ -207,8 +212,7 @@ from one collection to another.
 
 .. warning::
 
-        File transfers to NESE-hosted endpoints are NOT encrypted. If you require encryption,
-        you should encrypt the files yourself before sending to NESE.
+        File transfers to NESE-hosted endpoints are encrypted by default.
 
 Command Line Tools 
 """"""""""""""""""
