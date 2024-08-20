@@ -102,10 +102,10 @@ Encryption
 ----------
 
 In general:
-- Transfers via Globus to NESE Tape are encrypted in transit by default, although
+* Transfers via Globus to NESE Tape are encrypted in transit by default, although
 users can override this to transfer files in cleartext.
-- Data in NESE **disk** storage is encrypted at rest.
-- Data in NESE **tape** storage is **NOT** encrypted at rest.
+* Data in NESE *disk* storage is encrypted at rest.
+* Data in NESE *tape* storage is *NOT* encrypted at rest.
 
 If your data management plan requires encryption of the data at rest, you must
 encrypt your files before sending them to NESE Tape via Globus.
