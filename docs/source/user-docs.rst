@@ -84,7 +84,7 @@ The storage lifecycle policy is:
 * Migrate 2: files with access time age > 2 weeks are stubbed
 * Files < 100 MB copied to tape, but also remain on disk
 
-"Stubbed files" are files that have only a reference left on disk and have been migrated to tape
+"Stubbed files" are files that have only a reference left on disk and data have been migrated to tape.
 When the stubbed file is accessed via Globus, the file is retrieved by the tape robots, promoted to the
 disk-based staging area, and the stub is then replaced with the original file.
 
