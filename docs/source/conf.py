@@ -17,6 +17,7 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.autosummary',
     'sphinx.ext.intersphinx',
+    'notfound.extension',
 ]
 
 intersphinx_mapping = {
@@ -34,3 +35,10 @@ html_theme = 'sphinx_rtd_theme'
 
 # -- Options for EPUB output
 epub_show_urls = 'footnote'
+
+# notfound.extension custom 404 page to allow nesedev -> nese
+notfound_context = {
+        'title': 'NESE Documentation has been Moved',
+        'body': "<h1>NESE Documentation Relocated on ReadTheDocs</h1>\n\nDocumentation for the NESE, the Northeast Storage Exchange, has been moved to a new ReadTheDocs page.\n\nYou can update your bookmarks by changing <em>nesedev.readthedocs.io</em> with <em>nese.readthedocs.io</em>."
+}
+
